@@ -1,0 +1,143 @@
+/* --- General Setup & Fonts --- */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* --- Main Chat Container --- */
+#chat {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- Messages Area --- */
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px; /* For scrollbar spacing */
+}
+
+/* Custom Scrollbar */
+#messages::-webkit-scrollbar {
+    width: 8px;
+}
+#messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+#messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* --- Chat Bubbles --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.msg {
+    margin: 10px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 80%;
+    line-height: 1.5;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.user {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+    text-align: left;
+}
+
+.bot {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #eef;
+    margin-right: auto;
+    border-bottom-left-radius: 5px;
+    text-align: left;
+}
+
+/* --- Input Area --- */
+.input-area {
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+input {
+    flex-grow: 1;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.2);
+}
+
+button {
+    padding: 14px 25px;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
